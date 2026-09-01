@@ -3,4 +3,4 @@ uvicorn[standard]
 requests
 python-dotenv
 pandas
-numpypip 
+numpy
