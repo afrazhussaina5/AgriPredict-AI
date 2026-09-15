@@ -1,2 +1,8 @@
+[project]
+name = "agripredict-ai"
+version = "1.0.0"
+description = "AgriPredict AI"
+requires-python = ">=3.12"
+
 [tool.vercel]
 entrypoint = "backend.main:app"
