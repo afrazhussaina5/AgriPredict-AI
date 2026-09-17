@@ -298,8 +298,8 @@ class AgriPredictApp {
           <div class="max-w-3xl relative z-10 space-y-6">
             
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-black">
-              <i class="fa-solid fa-trophy text-amber-400"></i>
-              <span>SIH Problem Statement 26132 • Market Linkages & Price Discovery</span>
+              <i class="fa-solid fa-seedling text-emerald-400"></i>
+              <span>🌱 AI-Powered Agricultural Market Intelligence Platform</span>
             </div>
 
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
@@ -1269,7 +1269,7 @@ class AgriPredictApp {
   }
 
   // =========================================================================
-  // PRODUCE LOT CREATION MODAL & WORKFLOW (SIH 26132)
+  // PRODUCE LOT CREATION MODAL & WORKFLOW
   // =========================================================================
   openCreateLotModal() {
     const analysis = this.currentAnalysis || this.loadPersistedAnalysis() || {
@@ -1303,7 +1303,7 @@ class AgriPredictApp {
         <div class="pb-4 border-b border-slate-200 dark:border-slate-700">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-black mb-2">
             <i class="fa-solid fa-box-open text-emerald-600"></i>
-            <span>SIH 26132 • Direct Produce Lot Creation</span>
+            <span>AgriPredict AI • Direct Produce Lot Creation</span>
           </div>
           <h3 class="text-2xl font-black text-slate-900 dark:text-white">
             Create Verified Produce Lot
