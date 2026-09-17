@@ -1,0 +1,16 @@
+[project]
+name = "agripredict-ai"
+version = "1.0.0"
+description = "AgriPredict AI"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "requests",
+    "python-dotenv",
+    "pandas",
+    "numpy",
+]
+
+[tool.vercel]
+entrypoint = "backend.main:app"

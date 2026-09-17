@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriPredict AI - Smart Market Intelligence & Price Discovery for Farmers </title>
+  <meta name="description" content="AI-Powered Market Intelligence and Price Discovery Platform answering When, Where and to Whom farmers should sell their produce for maximum net profit.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            },
+            harvest: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js 4.4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Top Announcement Bar / SIH Badge -->
+<!-- Top Announcement Bar -->
+<aside aria-label="AgriPredict AI Information Banner"
+  class="bg-gradient-to-r from-emerald-800 via-teal-900 to-slate-900 text-white text-[11px] sm:text-xs py-2 px-4 text-center font-medium border-b border-emerald-700/50">
+
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+
+    <div class="flex items-center gap-1.5 mx-auto sm:mx-0">
+
+      <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 font-bold">
+        AgriPredict AI
+      </span>
+
+      <span>
+        Strengthening Market Linkages &amp; Price Discovery for Farmers
+      </span>
+
+    </div>
+
+  </div>
+</aside>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="window.AgriApp.navigateTo('/')">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white text-2xl shadow-md shadow-emerald-500/20">
+          🌾
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white">AgriPredict</span>
+            <span class="text-xs font-black px-1.5 py-0.5 rounded bg-emerald-600 text-white">AI</span>
+          </div>
+          <p class="text-[10px] sm:text-[11px] font-semibold text-slate-500 dark:text-slate-400 truncate max-w-[200px] sm:max-w-none">
+            Smart Market Intelligence & Price Discovery
+          </p>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Tabs -->
+      <nav id="mainNavLinks" class="hidden md:flex items-center gap-1 bg-slate-100 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <!-- Injected dynamically by app.js -->
+      </nav>
+
+      <!-- Right Utility Actions: Language & Theme -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Language Switcher -->
+        <div class="relative">
+          <select id="langSelect" class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold py-2 pl-3 pr-8 rounded-xl border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer appearance-none">
+            <option value="en">🌐 English</option>
+            <option value="hi">🇮🇳 हिन्दी</option>
+            <option value="te">🇮🇳 తెలుగు</option>
+          </select>
+          <div class="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="themeToggleBtn" aria-label="Toggle dark mode" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 flex items-center justify-center transition-colors border border-slate-200 dark:border-slate-700">
+          <i class="fa-solid fa-moon dark:hidden"></i>
+          <i class="fa-solid fa-sun hidden dark:inline"></i>
+        </button>
+
+        <!-- Start Quick Action Mobile CTA -->
+        <button onclick="window.AgriApp.navigateTo('/analyze')" class="md:hidden px-3 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow">
+          Analyze
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Mobile Bottom Quick Navigation Bar -->
+    <div class="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 py-2 px-3 flex justify-around text-[10px] font-bold">
+      <button onclick="window.AgriApp.navigateTo('/')" data-mobile-route="/" class="flex flex-col items-center gap-0.5 text-slate-600 dark:text-slate-400">
+        <i class="fa-solid fa-house text-sm"></i>
+        <span>Home</span>
+      </button>
+      <button onclick="window.AgriApp.navigateTo('/analyze')" data-mobile-route="/analyze" class="flex flex-col items-center gap-0.5 text-slate-600 dark:text-slate-400">
+        <i class="fa-solid fa-wheat-awn text-sm"></i>
+        <span>Analyze</span>
+      </button>
+      <button onclick="window.AgriApp.navigateTo('/dashboard')" data-mobile-route="/dashboard" class="flex flex-col items-center gap-0.5 text-emerald-600 font-black">
+        <i class="fa-solid fa-chart-line text-sm"></i>
+        <span>Dashboard</span>
+      </button>
+      <button onclick="window.AgriApp.navigateTo('/recommendation')" data-mobile-route="/recommendation" class="flex flex-col items-center gap-0.5 text-slate-600 dark:text-slate-400">
+        <i class="fa-solid fa-brain text-sm"></i>
+        <span>Recommendation</span>
+      </button>
+      <button onclick="window.AgriApp.navigateTo('/buyers')" data-mobile-route="/buyers" class="flex flex-col items-center gap-0.5 text-slate-600 dark:text-slate-400">
+        <i class="fa-solid fa-handshake text-sm"></i>
+        <span>Buyers</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Dynamic SPA Content Area (Only active route is rendered here) -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div id="appMainContent">
+      <!-- Injected dynamically by app.js router -->
+    </div>
+  </main>
+
+  <!-- Deal Slip Modal Container -->
+  <div id="dealSlipModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div id="dealSlipModalContent"></div>
+  </div>
+
+  <!-- Produce Lot Creation Modal Container -->
+  <div id="produceLotModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div id="produceLotModalContent" class="w-full max-w-2xl my-8"></div>
+  </div>
+
+  <!-- Interaction Timeline Modal Container -->
+  <div id="timelineModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div id="timelineModalContent" class="w-full max-w-xl my-8"></div>
+  </div>
+
+  <!-- Modern Footer -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 mt-16 text-slate-600 dark:text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🌾</span>
+            <span class="text-lg font-black text-slate-900 dark:text-white">AgriPredict AI</span>
+          </div>
+          <p class="text-xs leading-relaxed max-w-md">
+            Smart Market Intelligence and Price Discovery Platform solving . Built with predictive price forecasting, logistics freight cost optimization, and verified direct buyer matching.
+          </p>
+          <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">
+            🌱 "When to sell, where to sell, and who to sell to — for maximum net return."
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-[11px] mb-3">
+            Navigation Routes
+          </h4>
+          <ul class="space-y-2">
+            <li><button onclick="window.AgriApp.navigateTo('/')" class="hover:text-emerald-600">Home (/)</button></li>
+            <li><button onclick="window.AgriApp.navigateTo('/analyze')" class="hover:text-emerald-600">Analyze Produce (/analyze)</button></li>
+            <li><button onclick="window.AgriApp.navigateTo('/dashboard')" class="hover:text-emerald-600">Market Dashboard (/dashboard)</button></li>
+            <li><button onclick="window.AgriApp.navigateTo('/recommendation')" class="hover:text-emerald-600">AI Recommendation (/recommendation)</button></li>
+            <li><button onclick="window.AgriApp.navigateTo('/buyers')" class="hover:text-emerald-600">Buyer Matching (/buyers)</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-[11px] mb-3">
+            Data Sources
+          </h4>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> Official Data.gov.in Mandi Feeds</li>
+            <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> e-NAM Integrated Mandis</li>
+            <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> State Cold Storage Tariffs</li>
+            <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> Verified FPO & Corporate Buyers</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px]">
+        <div>
+         © 2026 AgriPredict AI • Smart Market Intelligence & Price Discovery Platform
+        </div>
+        <div class="flex items-center gap-4 font-semibold">
+          <span>Net Return Engine</span>
+          <span>•</span>
+          <span>Voice Explainer</span>
+          <span>•</span>
+          <span>Zero Authentication Friction</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main ES Module Script -->
+  <script type="module" src="./static/js/app.js"></script>
+</body>
+</html>
