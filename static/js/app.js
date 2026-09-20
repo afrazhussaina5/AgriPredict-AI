@@ -479,10 +479,11 @@ class AgriPredictApp {
 
           <div class="max-w-3xl relative z-10 space-y-6">
             
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-black">
-              <i class="fa-solid fa-seedling text-emerald-400"></i>
-              <span>🌱 AI-Powered Agricultural Market Intelligence Platform</span>
-            </div>
+            <img
+              src="./static/assets/agri-intelligence-banner.png"
+              alt="AI-Powered Agricultural Market Intelligence Platform"
+              class="home-intelligence-banner"
+            >
 
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
               Know <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">When, Where & Who</span> to Sell Your Crop.
@@ -518,13 +519,6 @@ class AgriPredictApp {
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
 
-              <button 
-                onclick="window.AgriApp.navigateTo('/dashboard')" 
-                class="px-6 py-4 bg-white/15 hover:bg-white/25 text-white font-bold text-base rounded-2xl border border-white/20 transition-all flex items-center gap-2"
-              >
-                <i class="fa-solid fa-chart-pie"></i>
-                <span>View Dashboard</span>
-              </button>
             </div>
 
           </div>
@@ -995,7 +989,7 @@ class AgriPredictApp {
       grade: 'A',
       location: 'Kurnool, Andhra Pradesh'
     });
-    this.navigateTo('/analysis');
+    this.navigateTo('/analyze');
   }
 
   // =========================================================================
