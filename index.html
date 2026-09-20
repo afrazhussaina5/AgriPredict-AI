@@ -45,45 +45,29 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 antialiased selection:bg-emerald-500 selection:text-white">
 
-  <!-- Top Announcement Bar / SIH Badge -->
-<!-- Top Announcement Bar -->
-<aside aria-label="AgriPredict AI Information Banner"
-  class="bg-gradient-to-r from-emerald-800 via-teal-900 to-slate-900 text-white text-[11px] sm:text-xs py-2 px-4 text-center font-medium border-b border-emerald-700/50">
-
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
-
-    <div class="flex items-center gap-1.5 mx-auto sm:mx-0">
-
-      <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 font-bold">
-        AgriPredict AI
-      </span>
-
-      <span>
-        Strengthening Market Linkages &amp; Price Discovery for Farmers
-      </span>
-
+  <!-- Project announcement strip -->
+  <aside aria-label="AgriPredict AI announcements" class="live-engine-bar">
+    <div class="announcement-brand">
+      <span class="live-engine-status">AgriPredict AI</span>
+      <span>Strengthening Market Linkages &amp; Price Discovery for Farmers</span>
     </div>
-
-  </div>
-</aside>
+    <div class="announcement-status">
+      <span class="live-status-label">⚡ Live Mandi ML Engine</span>
+      <span class="live-divider" aria-hidden="true">•</span>
+      <span>Hackathon MVP 1.0</span>
+    </div>
+  </aside>
 
   <!-- Main Navigation Header -->
   <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
-      <div class="flex items-center gap-3 cursor-pointer" onclick="window.AgriApp.navigateTo('/')">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white text-2xl shadow-md shadow-emerald-500/20">
-          🌾
-        </div>
-        <div>
-          <div class="flex items-center gap-1.5">
-            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white">AgriPredict</span>
-            <span class="text-xs font-black px-1.5 py-0.5 rounded bg-emerald-600 text-white">AI</span>
-          </div>
-          <p class="text-[10px] sm:text-[11px] font-semibold text-slate-500 dark:text-slate-400 truncate max-w-[200px] sm:max-w-none">
-            Smart Market Intelligence & Price Discovery
-          </p>
+      <div class="brand cursor-pointer" onclick="window.AgriApp.navigateTo('/')">
+        <img src="./static/assets/agripredict-logo.png" alt="AgriPredict AI" class="brand-logo">
+        <div class="brand-text">
+          <div class="brand-title">AgriPredict AI</div>
+          <p class="brand-subtitle">Strengthening Market Linkages &amp; Price Discovery for Farmers</p>
         </div>
       </div>
 

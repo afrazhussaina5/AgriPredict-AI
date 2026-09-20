@@ -13,6 +13,147 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.live-engine-bar {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 5px 16px;
+  box-sizing: border-box;
+  background: #0f5c52;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.announcement-brand,
+.announcement-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.announcement-brand {
+  min-width: 0;
+}
+
+.announcement-status {
+  flex: 0 0 auto;
+}
+
+.live-engine-status,
+.live-divider,
+.live-status-label {
+  color: #8ce7cf;
+  font-weight: 800;
+}
+
+.live-engine-status {
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: #168c76;
+  color: #8ce7cf;
+}
+
+.home-intelligence-banner {
+  display: block;
+  width: min(100%, 634px);
+  height: auto;
+  border-radius: 999px;
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.18);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(16, 185, 129, 0.2);
+}
+
+.brand-text {
+  min-width: 0;
+}
+
+.brand-title {
+  color: #0f172a;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.dark .brand-title {
+  color: #ffffff;
+}
+
+.brand-subtitle {
+  max-width: 260px;
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dark .brand-subtitle {
+  color: #94a3b8;
+}
+
+@media (max-width: 640px) {
+  .live-engine-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .announcement-brand,
+  .announcement-status {
+    max-width: 100%;
+  }
+
+  .live-engine-status {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+  }
+
+  .brand-title {
+    font-size: 17px;
+  }
+
+  .brand-subtitle {
+    max-width: 180px;
+    font-size: 9px;
+  }
+}
+
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading);
 }
