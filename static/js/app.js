@@ -479,11 +479,9 @@ class AgriPredictApp {
 
           <div class="max-w-3xl relative z-10 space-y-6">
             
-            <img
-              src="./static/assets/agri-intelligence-banner.png"
-              alt="AI-Powered Agricultural Market Intelligence Platform"
-              class="home-intelligence-banner"
-            >
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-black">
+              <span>🌱 AI-Powered Agricultural Market Intelligence Platform</span>
+            </div>
 
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
               Know <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">When, Where & Who</span> to Sell Your Crop.

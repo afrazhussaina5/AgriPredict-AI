@@ -18,18 +18,44 @@ body {
   min-height: 38px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 4px 16px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 5px 16px;
   box-sizing: border-box;
   background: #0f5c52;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-.live-engine-banner {
-  display: block;
-  width: min(100%, 634px);
-  height: 29px;
-  object-fit: contain;
-  object-position: right center;
+.announcement-brand,
+.announcement-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.announcement-brand {
+  min-width: 0;
+}
+
+.announcement-status {
+  flex: 0 0 auto;
+}
+
+.live-engine-status,
+.live-divider,
+.live-status-label {
+  color: #8ce7cf;
+  font-weight: 800;
+}
+
+.live-engine-status {
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: #168c76;
+  color: #8ce7cf;
 }
 
 .home-intelligence-banner {
@@ -91,15 +117,21 @@ body {
 
 @media (max-width: 640px) {
   .live-engine-bar {
-    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
     padding: 5px 10px;
+    font-size: 11px;
   }
 
-  .live-engine-banner {
-    width: 100%;
-    height: auto;
-    max-height: 28px;
-    object-fit: contain;
+  .announcement-brand,
+  .announcement-status {
+    max-width: 100%;
+  }
+
+  .live-engine-status {
+    padding: 3px 8px;
+    font-size: 11px;
   }
 
   .brand {
